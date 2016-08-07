@@ -1,0 +1,148 @@
+@import '_helper';
+
+body{
+  font-family: "Arial";
+}
+
+header{
+
+  .navbar-brand{
+    padding: 0 15px;
+  }
+  .navbar-default {
+    background-color: #424242;
+    border-color: transparent;
+
+    .navbar-nav > .active > a{
+      background: transparent;
+      color: #e3e3e3;
+      transition: .25s all ease;
+
+      &:hover, &:focus{
+        background: #e3e3e3;
+        color: #424242;
+        border-bottom: 4px solid #424242;
+      }
+    }
+  }
+  .navbar {
+    min-height: 50px;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .header-logo{
+  }
+
+}
+
+.header{
+  min-height: calc(300px - 50px);
+  width: 100%;
+  &.sublime{
+    background: url('../images/header-main.jpg') no-repeat fixed center bottom / cover;
+  }
+  &.plant{
+    margin: 40px 0;
+    background: url('../images/header-plant.jpg') no-repeat fixed center bottom / cover;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  padding: 0;
+  text-align: left;
+  color: #665F5C;
+  font-size: 30px;
+  margin: 20px 0;
+  text-transform: uppercase;
+
+  .text-greater-h1{
+    font-size: 80px;
+    line-height: 1;
+  }
+
+  &.año{
+    font-size: 40px;
+    line-height: 1;
+    color: #292A33;
+  }
+}
+
+p{
+  text-align: justify;
+  color: #333333;
+  letter-spacing: 1px;
+
+  .text-greater{
+    font-size: 80px;
+    line-height: 1;
+  }
+  .nickname{
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 4px;
+  }
+  .tilde{
+    font-weight: bolder;
+
+  }
+}
+
+img{
+
+  &.logo-cerebro{
+    max-width: 200px;
+  }
+}
+
+section#main-header{
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  .opacity{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.25);
+  }
+
+}
+
+
+section#presentation{
+
+  .header-website{
+    margin: 0;
+    padding: 0;
+
+    .jonathan{
+      display: block;
+      margin: 20px auto 20px;
+    }
+  }
+
+  .habilidades-container{
+
+    text-align: center;
+
+    .habilidades-div{
+
+      margin: 20px 0;
+
+      i{
+        color: #4C4745;
+      }
+    }
+
+  }
+
+}
