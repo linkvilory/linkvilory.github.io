@@ -25,6 +25,13 @@ header .navbar {
   margin-bottom: 0;
   border: 0;
   border-radius: 0; }
+  header .navbar .actualizacion {
+    color: #ffffff;
+    font-size: 9px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: bottom;
+    display: inline-block; }
 
 .header {
   min-height: calc(300px - 50px);
@@ -72,6 +79,14 @@ h6 {
     font-size: 40px;
     line-height: 1;
     color: #292A33; }
+  h1.footer,
+  h2.footer,
+  h3.footer,
+  h4.footer,
+  h5.footer,
+  h6.footer {
+    font-size: 14px;
+    color: #e3e3e3; }
 
 ul li.inner-list {
   list-style: none; }
@@ -111,5 +126,29 @@ section#presentation .habilidades-container {
     margin: 20px 0; }
     section#presentation .habilidades-container .habilidades-div i {
       color: #4C4745; }
+
+footer {
+  margin: 20px 0 0 0;
+  padding: 40px 0;
+  background: #424242; }
+  footer .social-network,
+  footer .websites {
+    list-style: none;
+    padding: 0; }
+    footer .social-network li,
+    footer .websites li {
+      padding: 10px; }
+      footer .social-network li a,
+      footer .websites li a {
+        color: #e3e3e3;
+        text-decoration: none; }
+        footer .social-network li a:hover, footer .social-network li a:active, footer .social-network li a:focus,
+        footer .websites li a:hover,
+        footer .websites li a:active,
+        footer .websites li a:focus {
+          color: #e3e3e3;
+          text-decoration: none; }
+  footer p {
+    color: #e3e3e3; }
 
 /*# sourceMappingURL=main.css.map */

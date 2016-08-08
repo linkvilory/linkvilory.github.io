@@ -30,6 +30,15 @@ header{
     margin-bottom: 0;
     border: 0;
     border-radius: 0;
+
+    .actualizacion{
+      color: #ffffff;
+      font-size: 9px;
+      height: 50px;
+      line-height: 50px;
+      vertical-align: bottom;
+      display: inline-block;
+    }
   }
   .header-logo{
   }
@@ -39,7 +48,7 @@ header{
 .header{
   min-height: calc(300px - 50px);
   width: 100%;
-  position: relative; 
+  position: relative;
   .opacity{
     width: 100%;
     height: 100%;
@@ -79,6 +88,10 @@ h6{
     font-size: 40px;
     line-height: 1;
     color: #292A33;
+  }
+  &.footer{
+    font-size: 14px;
+    color: #e3e3e3;
   }
 }
 
@@ -157,4 +170,36 @@ section#presentation{
 
   }
 
+}
+
+footer{
+
+  margin: 20px 0 0 0;
+  padding: 40px 0;
+  background: #424242;
+
+  .social-network,
+  .websites{
+    list-style: none;
+    padding: 0;
+
+    li{
+      padding: 10px;
+      a{
+        color: #e3e3e3;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus{
+          color: #e3e3e3;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  p{
+    color: #e3e3e3;
+  }
 }
