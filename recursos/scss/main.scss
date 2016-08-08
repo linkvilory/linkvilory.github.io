@@ -1,7 +1,7 @@
 @import '_helper';
 
 body{
-  font-family: "Arial";
+  font-family: "michromaregular";
 }
 
 header{
@@ -39,6 +39,15 @@ header{
 .header{
   min-height: calc(300px - 50px);
   width: 100%;
+  position: relative; 
+  .opacity{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.25);
+  }
   &.sublime{
     background: url('../images/header-main.jpg') no-repeat fixed center bottom / cover;
   }
@@ -73,10 +82,20 @@ h6{
   }
 }
 
+ul{
+
+  li{
+
+    &.inner-list{
+      list-style: none;
+    }
+  }
+}
 p{
   text-align: justify;
   color: #333333;
   letter-spacing: 1px;
+  font-family: "Arial";
 
   .text-greater{
     font-size: 80px;
@@ -106,14 +125,7 @@ section#main-header{
   padding: 0;
   position: relative;
 
-  .opacity{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.25);
-  }
+
 
 }
 

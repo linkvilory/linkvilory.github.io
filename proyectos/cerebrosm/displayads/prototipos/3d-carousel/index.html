@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style type="text/css">
+
+    body{
+      margin: 0px;
+      padding: 0px;
+    }
+    .container {
+      width: 300px;
+      height: 250px;
+      position: relative;
+      margin: 0;
+      border: 0;
+      overflow: hidden;
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+    }
+    #carousel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform 1s;
+              transition: transform 1s;
+    }
+    #carousel > div {
+      display: block;
+      position: absolute;
+      width: 296px;
+      height: 246px;
+      border: 0;
+      line-height: 250px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      border: 2px solid #444
+    }
+
+    #carousel.panels-backface-invisible figure {
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+    }
+
+    #carousel .one  { background: hsla(   0, 100%, 50%, 0.6 ); }
+    #carousel .two   { background: hsla(  60, 100%, 50%, 0.6 ); }
+    #carousel .three  { background: hsla( 120, 100%, 50%, 0.6 ); }
+    #carousel .four   { background: hsla( 180, 100%, 50%, 0.6 ); }
+    #carousel .five    { background: hsla( 240, 100%, 50%, 0.6 ); }
+    #carousel .six { background: hsla( 300, 100%, 50%, 0.6 ); }
+
+    #carousel .one { -webkit-transform: rotateY(   0deg ) translateZ( 288px ); transform: rotateY(   0deg ) translateZ( 288px ); }
+    #carousel .two { -webkit-transform: rotateY(  40deg ) translateZ( 288px ); transform: rotateY(  40deg ) translateZ( 288px ); }
+    #carousel .three { -webkit-transform: rotateY(  80deg ) translateZ( 288px ); transform: rotateY(  80deg ) translateZ( 288px ); }
+    #carousel .four { -webkit-transform: rotateY( 120deg ) translateZ( 288px ); transform: rotateY( 120deg ) translateZ( 288px ); }
+    #carousel .five { -webkit-transform: rotateY( 160deg ) translateZ( 288px ); transform: rotateY( 160deg ) translateZ( 288px ); }
+    #carousel .six { -webkit-transform: rotateY( 200deg ) translateZ( 288px ); transform: rotateY( 200deg ) translateZ( 288px ); }
+    #carousel .seven { -webkit-transform: rotateY( 240deg ) translateZ( 288px ); transform: rotateY( 240deg ) translateZ( 288px ); }
+    #carousel .eight { -webkit-transform: rotateY( 280deg ) translateZ( 288px ); transform: rotateY( 280deg ) translateZ( 288px ); }
+    #carousel .nine { -webkit-transform: rotateY( 320deg ) translateZ( 288px ); transform: rotateY( 320deg ) translateZ( 288px ); }
+
+    #carousel.show-one {
+      -webkit-transform: translateZ( -288px ) rotateY( 0deg );
+              transform: translateZ( -288px ) rotateY( 0deg );
+    }
+
+    #carousel.show-two {
+      -webkit-animation: sback 1s;
+              animation: sback 1s;
+      -webkit-transform: translateZ( -288px ) rotateY( -40deg );
+              transform: translateZ( -288px ) rotateY( -40deg );
+    }
+
+    #carousel.show-three {
+      -webkit-animation: sright 1s;
+              animation: sright 1s;
+      -webkit-transform: translateZ( -288px ) rotateY(  -80deg );
+              transform: translateZ( -288px ) rotateY(  -80deg );
+    }
+
+    #carousel.show-four {
+      -webkit-animation: sleft 1s;
+              animation: sleft 1s;
+      -webkit-transform: translateZ( -288px ) rotateY(   -120deg );
+              transform: translateZ( -288px ) rotateY(   -120deg );
+    }
+
+    #carousel.show-five {
+      -webkit-animation: stop 1s;
+              animation: stop 1s;
+      -webkit-transform: translateZ( -288px ) rotateY(  -160deg );
+              transform: translateZ( -288px ) rotateY(  -160deg );
+    }
+
+    #carousel.show-six {
+      -webkit-animation: sbottom 1s;
+              animation: sbottom 1s;
+      -webkit-transform: translateZ( -288px ) rotateY(   -200deg );
+              transform: translateZ( -288px ) rotateY(   -200deg );
+    }
+
+    /* nav controls*/
+    .left1 {
+      background: url('assets/arrows.png') 0 0 no-repeat;
+      height: 30px;
+      width: 29px;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: 1px;
+      z-index:9999;
+      cursor:pointer;
+    }
+    .left1:hover {
+      background: url('assets/arrows.png') 0 100% no-repeat;
+    }
+    .right1 {
+      background: url('assets/arrows.png') 100% 0 no-repeat;
+      height: 30px;
+      width: 29px;
+      position: absolute;
+      top: calc(50% - 15px);
+      right: 1px;
+      z-index:9999;
+      cursor:pointer;
+    }
+    .right1:hover {
+      background: url('assets/arrows.png') 100% 100% no-repeat;
+    }
+
+  </style>
+  </head>
+  <body>
+
+    <section class="container">
+      <div id="carousel" class="show-one">
+        <div id="container-p1" class="one">
+          <span>Pagina 1</span>
+          <div onClick="showSix()" class="left1"></div>
+          <div onClick="showTwo()" class="right1"></div>
+        </div>
+        <div id="container-p2" class="two">
+          <span>Pagina 2</span>
+          <div onClick="showOne()" class="left1"></div>
+          <div onClick="showThree()" class="right1"></div>
+        </div>
+        <div id="container-p3" class="three">
+          <span>Pagina 3</span>
+          <div onClick="showTwo()" class="left1"></div>
+          <div onClick="showFour()" class="right1"></div>
+        </div>
+        <div id="container-p4" class="four">
+          <span>Pagina 4</span>
+          <div onClick="showThree()" class="left1"></div>
+          <div onClick="showFive()" class="right1"></div>
+        </div>
+        <div id="container-p5" class="five">
+          <span>Pagina 5</span>
+          <div onClick="showFour()" class="left1"></div>
+          <div onClick="showSix()" class="right1"></div>
+        </div>
+        <div id="container-p6" class="six">
+          <span>Pagina 6</span>
+          <div onClick="showFive()" class="left1"></div>
+          <div onClick="showOne()" class="right1"></div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+
+    function showOne(){
+      document.getElementById("carousel").className = "show-one";
+    }
+
+    function showTwo(){
+      document.getElementById("carousel").className = "show-two";
+    }
+
+    function showThree(){
+      document.getElementById("carousel").className = "show-three";
+    }
+
+    function showFour(){
+      document.getElementById("carousel").className = "show-four";
+    }
+
+    function showFive(){
+      document.getElementById("carousel").className = "show-five";
+    }
+
+    function showSix(){
+      document.getElementById("carousel").className = "show-six";
+    }
+
+    </script>
+
+  </body>
+</html>
