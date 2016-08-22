@@ -1,7 +1,12 @@
 @import '_helper';
 
+*{
+  animation: .25s all ease;
+}
+
 body{
   font-family: "michromaregular";
+  background: $color_white_gray;
 }
 
 header{
@@ -10,18 +15,18 @@ header{
     padding: 0 15px;
   }
   .navbar-default {
-    background-color: #424242;
+    background-color: $color_purple;
     border-color: transparent;
 
     .navbar-nav > .active > a{
       background: transparent;
-      color: #e3e3e3;
+      color: $color_white_gray;
       transition: .25s all ease;
 
       &:hover, &:focus{
-        background: #e3e3e3;
-        color: #424242;
-        border-bottom: 4px solid #424242;
+        background: $color_white_gray;
+        color: $color_gray_dark;
+        border-bottom: 4px solid $color_gray_dark;
       }
     }
   }
@@ -32,12 +37,23 @@ header{
     border-radius: 0;
 
     .actualizacion{
-      color: #ffffff;
+      color: $color_white_gray;
       font-size: 9px;
       height: 50px;
-      line-height: 50px;
+      line-height: 80px;
       vertical-align: bottom;
       display: inline-block;
+    }
+
+    .navbar-brand{
+      color: $color_white_gray;
+      text-align: left;
+      text-transform: lowercase;
+      font-weight: lighter;
+      line-height: 70px;
+      &:hover{
+        color: $color_green_light;
+      }
     }
   }
   .header-logo{
@@ -49,20 +65,44 @@ header{
   min-height: calc(300px - 50px);
   width: 100%;
   position: relative;
-  .opacity{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.25);
-  }
+  overflow: hidden;
+
   &.sublime{
     background: url('../images/header-main.jpg') no-repeat fixed center bottom / cover;
   }
   &.plant{
-    margin: 40px 0;
+    margin: 0;
     background: url('../images/header-plant.jpg') no-repeat fixed center bottom / cover;
+  }
+}
+
+.opacity{
+  position: absolute;
+  transition: .25s all ease;
+
+  &.top-left{
+    border-radius: 0 0 0 0;
+    width: 0px;
+    height: 300px;
+    top: 0;
+    left: -150px;
+    transform: skew(0deg, 0deg);
+    transition: 1.50s all ease;
+
+  }
+  &.bottom-right{
+    border-radius: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    right: -150px;
+    transform: skew(0deg, 0deg);
+    transition: 2.25s all ease;
+
+  }
+
+  &.o-25{
+    background: rgba(53,43,43,0.15);
   }
 }
 
@@ -74,7 +114,7 @@ h5,
 h6{
   padding: 0;
   text-align: left;
-  color: #665F5C;
+  color: $color_gray_dark;
   font-size: 30px;
   margin: 20px 0;
   text-transform: uppercase;
@@ -82,6 +122,7 @@ h6{
   .text-greater-h1{
     font-size: 80px;
     line-height: 1;
+    color: $color_purple;
   }
 
   &.año{
@@ -91,31 +132,65 @@ h6{
   }
   &.footer{
     font-size: 14px;
-    color: #e3e3e3;
+    color: $color_green_light;
   }
 }
 
 ul{
+  border: 0;
 
   li{
 
     &.inner-list{
+      border: 0;
       list-style: none;
+    }
+
+    a{
+      color: $color_blue_light;
+      text-decoration: none;
+      transition: .25s all ease;
+      display: inline-block;
+
+      &:hover{
+        color: $color_blue_light_hover;
+        text-decoration: none;
+        letter-spacing: 4px;
+      }
+    }
+
+    ul{
+
+      li{
+        margin: 4px 0;
+        a{
+          color: $color_blue_light;
+          text-decoration: none;
+          transition: .25s all ease;
+          display: inline-block;
+
+          &:hover{
+            color: $color_blue_light_hover;
+            text-decoration: none;
+            letter-spacing: 4px;
+          }
+        }
+      }
     }
   }
 }
 p{
   text-align: justify;
-  color: #333333;
+  color: #424242;
   letter-spacing: 1px;
   font-family: "Arial";
 
   .text-greater{
     font-size: 80px;
     line-height: 1;
+    color: $color_purple;
   }
   .nickname{
-    text-transform: uppercase;
     font-style: italic;
     letter-spacing: 4px;
   }
@@ -123,6 +198,19 @@ p{
     font-weight: bolder;
 
   }
+
+  a{
+    color: $color_blue_light;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:hover{
+      color: $color_blue_light_hover;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+  }
+
 }
 
 img{
@@ -137,13 +225,17 @@ section#main-header{
   margin: 0;
   padding: 0;
   position: relative;
-
-
+  overflow: hidden;
 
 }
 
 
 section#presentation{
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
 
   .header-website{
     margin: 0;
@@ -176,7 +268,7 @@ footer{
 
   margin: 20px 0 0 0;
   padding: 40px 0;
-  background: #424242;
+  background: $color_purple;
 
   .social-network,
   .websites{
@@ -186,20 +278,21 @@ footer{
     li{
       padding: 10px;
       a{
-        color: #e3e3e3;
+        color: $color_white_gray;
         text-decoration: none;
 
         &:hover,
         &:active,
         &:focus{
-          color: #e3e3e3;
+          color: $color_white_gray;
           text-decoration: none;
+          letter-spacing: 0;
         }
       }
     }
   }
 
   p{
-    color: #e3e3e3;
+    color: $color_white_gray;
   }
 }
