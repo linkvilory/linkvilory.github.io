@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><VAST version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd">
+  <Ad id="812030">
+    <InLine>
+      <AdSystem>DoubleClick</AdSystem>
+      <AdTitle>Cerebro Smart Media mobile vast template 2.0</AdTitle>
+      <Description>date of revision 24-01-17</Description>
+       
+        <Impression id="3rdparty">
+          <![CDATA[]]>
+        </Impression>
+        <Impression id="3rdparty">
+          <![CDATA[]]>
+        </Impression>
+        <Impression id="3rdparty">
+          <![CDATA[]]>
+        </Impression>
+        <Impression id="3rdparty">
+          <![CDATA[]]>
+        </Impression>
+        <Impression id="3rdparty">
+          <![CDATA[]]>
+        </Impression>
+        <Impression id="3rdparty">
+          <![CDATA[]]>
+        </Impression>
+      <Creatives>
+        <Creative sequence="1">
+          <Linear>
+            <Duration>00:00:36</Duration>
+            <TrackingEvents>
+              <Tracking event="start">
+              </Tracking>
+              <Tracking event="midpoint">
+              </Tracking>
+              <Tracking event="firstQuartile">
+              </Tracking>
+              <Tracking event="thirdQuartile">
+              </Tracking>
+              <Tracking event="complete">
+              </Tracking>
+              <Tracking event="mute">
+              </Tracking>
+              <Tracking event="fullscreen">
+              </Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough>
+                  <![CDATA[http://cerebrosm.com]]>
+              </ClickThrough>
+            </VideoClicks>
+            <MediaFiles>
+              <MediaFile id="1" delivery="progressive" type="video/mp4" bitrate="524" width="640" height="360">
+                  <![CDATA[http://leads.cerebro.agency/VPAID/infografia.mp4]]>
+              </MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+        <Creative sequence="1">
+          <CompanionAds>
+          </CompanionAds>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>

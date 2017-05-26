@@ -1,36 +1,22 @@
-/*
- * Jquery animations
- */
 $(document).ready(function(){
 
-  $(".opacity.top-left, .opacity.bottom-right").css("left",$("#presentation .col-md-8").position().left);
-  $(".opacity.top-left, .opacity.bottom-right").css("top",$("#presentation .col-md-8").position().top);
-
-
   /*
-   * Se recorre el objeto banner para determinar cuantos banners se tienen que mostrar
-   * Por el momento se muestran todos sin importar la cantidad y no hay algún tipo de paginación.
-   * Se van agregando cada uno de los banners al contenedor para su visualización.
+   * Scrool down animation
    */
-  for(banner in banners){
+  $("a[href='#main']").on("click", function(event){
 
-    var kws = banners[banner]['platform'];
-    var kw = kws.replace(/ /g, "").split("|");
+    var target = this.hash;
+    event.preventDefault();
+    var target = this.hash;
+    var height = $(target).offset().top;
+    $('html, body').stop().animate({ scrollTop: height }, 400, function(e) {
+      window.location.hash = target;
+    });
 
-    var appendHTML = '<li><a target="_blank" href="visualizador.php?id=' + banners[banner]['id'] + '&platform=' + kw + '">' + banners[banner]['name'] + '</a></li>';
+  });
 
-    $("#banner-list").append(appendHTML);
-
-  }
-
-});
+  $(".phrase").fitText(1.2, { minFontSize: '20px', maxFontSize: '60px' });
 
 
-/*
- * Detect resize and rellocate all the stuff
- */
-$(window).on('resize', function() {
-  /* Relocate on resize the bg gray */
-  $(".opacity.top-left, .opacity.bottom-right").css("left",$("#presentation .col-md-8").position().left);
-  $(".opacity.top-left, .opacity.bottom-right").css("top",$("#presentation .col-md-8").position().top);
+
 });

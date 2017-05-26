@@ -1,4 +1,6 @@
 # linkvilory.github.io
 Personal Website Linkvilory
 
-linkvilory@hotmail.com Account Mail for personal contact
+En esta página web puedes encontrar diversos ejemplos y tips para realizar tu trabajo de manera eficiente.
+
+:)

@@ -1,489 +1,406 @@
-@import '_helper';
+$footer_color: #5d737e;
+$header_color: #64b6ac;
+$h_color: #c0fdfb;
+$hover_color: #daffef;
+$text_white: #fcfffd;
+$text_black: #333;
 
-*{
-  animation: .25s all ease;
+$space_a: #b7d3f2;
+
+/*
+ * General CSS
+ */
+body,
+html{
+  background: $text_white;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+a[href="#main"]{
+  margin: 0;
+  display: block;
+  background: #333;
+  color: #fcfffd;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+code, b{
+  background: $footer_color;
+  color: $hover_color;
+}
+b{
+  padding: 2px 4px;
+  font-size: 90%;
+  border-radius: 4px;
+}
+u{
+  text-decoration: none;
+  position: relative;
+  color: $footer_color;
+  font-weight: bolder;
+}
+section{
+  &#space-a,
+  &#space-b{
+    margin: 60px 0;
+    background: transparent;
+    color: $text_black;
+    padding: 60px 0;
+    p{
+      color: $text_black;
+      text-align: center;
+      margin: 0;
+    }
+  }
 }
 
-body{
-  font-family: "michromaregular";
-  background: $color_white_gray;
+
+
+@mixin size-banner($w, $h){
+
+  width: $w;
+  height: $h;
+
+}
+.ad-container{
+  margin: auto;
+  display: table;
+}
+iframe.ad.content:empty{
+  display: none;
+}
+
+.breadcumb{
+  padding: 0;
+  ul{
+    margin: 10px 0;
+    list-style: none;
+    li{
+      display: inline;
+      &:after{
+        display: inline;
+        content: "\f105";
+        font-family: "FontAwesome";
+        position: relative;
+        padding: 0 10px;
+        color: $text_black;
+      }
+      &:last-child{
+        &:after{
+          content: "";
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.loading{
+  display: block;
+  margin: 15px auto;
+  text-align: center;
+}
+
+#i-banner-container{
+  margin: auto;
+  display: block;
+  position: relative;
+  .i-overlayer{
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+  }
+  #i-banner{
+
+  }
+}
+.beta.warning{
+  background: $text_black;
+  padding: 5px 10px;
+  color: $text_white;
+  font-size: 10px;
+  text-align: right;
 }
 
 header{
-
-  .navbar-brand{
-    padding: 0 15px;
-  }
-  .navbar-default {
-    background-color: $color_purple;
-    border-color: transparent;
-
-    .navbar-nav > .active > a{
-      background: transparent;
-      color: $color_white_gray;
-      transition: .25s all ease;
-
-      &:hover, &:focus{
-        background: $color_white_gray;
-        color: $color_gray_dark;
-        border-bottom: 4px solid $color_gray_dark;
-      }
-    }
-  }
-  .navbar {
-    min-height: 50px;
-    margin-bottom: 0;
-    border: 0;
-    border-radius: 0;
-
-    .actualizacion{
-      color: $color_white_gray;
-      font-size: 9px;
-      height: 50px;
-      line-height: 80px;
-      vertical-align: bottom;
-      display: inline-block;
-    }
-
-    .navbar-brand{
-      color: $color_white_gray;
-      text-align: left;
-      text-transform: lowercase;
-      font-weight: lighter;
-      line-height: 70px;
-      &:hover{
-        color: $color_green_light;
-      }
-    }
-  }
-  .header-logo{
-  }
-
-}
-
-.header{
-  min-height: calc(300px - 50px);
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-
-  &.sublime{
-    background: url('../images/header-main.jpg') no-repeat fixed center bottom / cover;
-  }
-  &.plant{
-    margin: 0;
-    background: url('../images/header-plant.jpg') no-repeat fixed center bottom / cover;
-  }
-}
-
-.opacity{
-  position: absolute;
-  transition: .25s all ease;
-
-  &.top-left{
-    border-radius: 0 0 0 0;
-    width: 0px;
-    height: 300px;
-    top: 0;
-    left: -150px;
-    transform: skew(0deg, 0deg);
-    transition: 1.50s all ease;
-
-  }
-  &.bottom-right{
-    border-radius: 0 0 0 0;
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    right: -150px;
-    transform: skew(0deg, 0deg);
-    transition: 2.25s all ease;
-
-  }
-
-  &.o-25{
-    background: rgba(53,43,43,0.15);
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-  padding: 0;
-  text-align: left;
-  color: $color_gray_dark;
-  font-size: 30px;
-  margin: 20px 0;
-  text-transform: uppercase;
-
-  .text-greater-h1{
-    font-size: 80px;
-    line-height: 1;
-    color: $color_purple;
-  }
-
-  &.año{
-    font-size: 40px;
-    line-height: 1;
-    color: #292A33;
-  }
-  &.footer{
-    font-size: 14px;
-    color: $color_green_light;
-  }
-}
-
-ul{
-  border: 0;
-
-  li{
-
-    &.inner-list{
-      border: 0;
-      list-style: none;
-    }
-
-    a{
-      color: $color_blue_light;
-      text-decoration: none;
-      transition: .25s all ease;
-      display: inline-block;
-
-      &:hover{
-        color: $color_blue_light_hover;
-        text-decoration: none;
-        letter-spacing: 4px;
-      }
-    }
-
-    ul{
-
-      li{
-        margin: 4px 0;
-        a{
-          color: $color_blue_light;
-          text-decoration: none;
-          transition: .25s all ease;
-          display: inline-block;
-
-          &:hover{
-            color: $color_blue_light_hover;
-            text-decoration: none;
-            letter-spacing: 4px;
-          }
-        }
-      }
-    }
-  }
-}
-p{
-  text-align: justify;
-  color: #424242;
-  letter-spacing: 1px;
-  font-family: "Arial";
-
-  .text-greater{
-    font-size: 80px;
-    line-height: 1;
-    color: $color_purple;
-  }
-  .nickname{
-    font-style: italic;
-    letter-spacing: 4px;
-  }
-  .tilde{
-    font-weight: bolder;
-
-  }
-
-  a{
-    color: $color_blue_light;
-    text-decoration: none;
-    letter-spacing: 1px;
-
-    &:hover{
-      color: $color_blue_light_hover;
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-  }
-
-}
-
-img{
-
-  &.logo-cerebro{
-    max-width: 200px;
-  }
-}
-
-section#main-header{
-
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-
-}
-
-
-section#presentation{
-
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-
-  .header-website{
-    margin: 0;
-    padding: 0;
-
-    .jonathan{
-      display: block;
-      margin: 20px auto 20px;
-    }
-  }
-
-  .habilidades-container{
-
-    text-align: center;
-
-    .habilidades-div{
-
-      margin: 20px 0;
-
-      i{
-        color: #4C4745;
-      }
-    }
-
-  }
-
-}
-
-footer{
-
-  margin: 20px 0 0 0;
+  background: $header_color;
+  color: $text_white;
   padding: 40px 0;
-  background: $color_purple;
-
-  .social-network,
-  .websites{
-    list-style: none;
+}
+section{
+  padding: 40px 0;
+  a.btn{
+    background: $text_black;
+    color: $text_white;
+    border: 1px solid $text_black;
+    padding: 10px 0;
+    display: block;
+    margin: auto;
+    max-width: 160px;
+    transition: .25s all ease;
+    &:hover,
+    &:focus,
+    &:active{
+      color: $text_black;
+      background: $text_white;
+      border: 1px solid $text_black;
+    }
+  }
+  p{
+    color: $text_black;
+    line-height: 1.5;
+  }
+  h2{
+    color: $header_color;
+  }
+}
+table{
+  text-align: left;
+}
+.cert-home{
+  display: inline-block;
+  margin: 5px;
+}
+footer{
+  background: $footer_color;
+  padding: 40px 0;
+  ul{
     padding: 0;
-
+    margin: 0;
+    list-style: none;
     li{
-      padding: 10px;
+      margin: 0 15px 0 0;
+      display: inline-block;
       a{
-        color: $color_white_gray;
+        color: #fcfffd;
         text-decoration: none;
-
         &:hover,
         &:active,
         &:focus{
-          color: $color_white_gray;
+          color: #daffef;
           text-decoration: none;
-          letter-spacing: 0;
         }
       }
     }
   }
 
-  p{
-    color: $color_white_gray;
-  }
 }
 
-
 /*
- * Visualizador
+ * Script Banner Test
  */
- .img-dummy{
-   background: $color_gray_dark;
-   width: 100%;
-   min-height: 250px;
-   margin-bottom: 10px;
+#display-area,
+#display-area img{
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+}
+/*
+ * Ads section
+ */
+#ads{
+  h2{
+    text-align: center;
+  }
+  img{
+    display: block;
+    margin: auto;
+  }
+}
+#ads-display{
+  #banners{
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    ul{
+      font-weight: normal;
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .banner{
+      margin: 40px auto 0;
+      .img-container{
+        img{
+          max-height: 180px;
+          margin: auto;
+        }
+      }
+      .box-banner-parallax{
+        h6{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+#banner{
 
-   &.x-lg{
+  .icon-responsive{
+    margin: auto;
+    text-align: center;
+    span{
+      &:hover,
+      &.active{
+      }
+    }
+  }
+  .iframe-container{
+    overflow: visible;
+    display: table;
+    margin: auto;
+    .iframe-banner{
+      position: relative;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      margin: 0 auto 10px;
+      display: block;
+    }
+  }
 
-   }
-   &.x-xs{
-     min-height: 50px;
-     width: 50px;
-     float: left;
-     margin: 0 10px 10px 0;
-   }
-   &.y-md{
-     min-height: 100px;
-   }
-   &.y-sm{
-     min-height: 50px;
-   }
- }
+  .s120x600{
+    @include size-banner(120px, 600px);
+    iframe{
+      @include size-banner(120px, 600px);
+    }
+  }
+  .s160x600{
+    @include size-banner(160px, 600px);
+    iframe{
+      @include size-banner(160px, 600px);
+    }
+  }
+  .s300x600{
+    @include size-banner(300px, 600px);
+    iframe{
+      @include size-banner(300px, 600px);
+    }
+  }
+  .s300x250{
+    @include size-banner(300px, 250px);
+    iframe{
+      @include size-banner(300px, 250px);
+    }
+  }
+  .s468x60{
+    @include size-banner(468px, 60px);
+    iframe{
+      @include size-banner(468px, 60px);
+    }
+  }
+  .s728x90{
+    @include size-banner(728px, 90px);
+    iframe{
+      @include size-banner(728px, 90px);
+    }
+  }
+  .s300x50{
+    @include size-banner(300px, 50px);
+    iframe{
+      @include size-banner(300px, 50px);
+    }
+  }
+  .s320x50{
+    @include size-banner(320px, 50px);
+    iframe{
+      @include size-banner(320px, 50px);
+    }
+  }
+  .s250x250{
+    @include size-banner(250px, 250px);
+    iframe{
+      @include size-banner(250px, 250px);
+    }
+  }
+  .s200x200{
+    @include size-banner(200px, 200px);
+    iframe{
+      @include size-banner(200px, 200px);
+    }
+  }
+  .s336x280{
+    @include size-banner(336px, 280px);
+    iframe{
+      @include size-banner(336px, 280px);
+    }
+  }
+  .s180x150{
+    @include size-banner(180px, 150px);
+    iframe{
+      @include size-banner(180px, 150px);
+    }
+  }
+  .s320x100{
+    @include size-banner(320px, 100px);
+    iframe{
+      @include size-banner(320px, 100px);
+    }
+  }
+  .s300x100{
+    @include size-banner(300px, 100px);
+    iframe{
+      @include size-banner(300px, 100px);
+    }
+  }
+  .s970x250{
+    @include size-banner(970px, 250px);
+    iframe{
+      @include size-banner(970px, 250px);
+    }
+  }
+  .s254x133{
+    @include size-banner(254px, 133px);
+    iframe{
+      @include size-banner(254px, 133px);
+    }
+  }
+  .s970x90{
+    @include size-banner(970px, 90px);
+    iframe{
+      @include size-banner(970px, 90px);
+    }
+  }
+  .s470x246{
+    @include size-banner(470px, 246px);
+    iframe{
+      @include size-banner(470px, 246px);
+    }
+  }
+  .s560x292{
+    @include size-banner(560px, 292px);
+    iframe{
+      @include size-banner(560px, 292px);
+    }
+  }
+  .s360x50{
+    @include size-banner(360px, 50px);
+    iframe{
+      @include size-banner(360px, 50px);
+    }
+  }
+  .s320x480{
+    @include size-banner(320px, 480px);
+    iframe{
+      @include size-banner(320px, 480px);
+    }
+  }
+  .s600x90{
+    @include size-banner(600px, 90px);
+    iframe{
+      @include size-banner(600px, 90px);
+    }
+  }
+  .s480x80{
+    @include size-banner(480px, 80px);
+    iframe{
+      @include size-banner(480px, 80px);
+    }
+  }
 
- .p-dummy{
-   width: 100%;
-   margin: 0 0 20px 0;
-   display: table;
-
-   .txt-dummy{
-     color: $color_gray_dark;
-     width: 100%;
-     height: 6px;
-     background: $color_gray_dark;
-     margin: 0 0 10px 0;
-
-     &.full{
-
-     }
-     &.small{
-       width: 80%;
-     }
-   }
- }
- .iframe-300x250{
-   overflow: visible;
-
-   iframe{
-     position: relative;
-     z-index: 9;
-     top: 0;
-     left: 0;
-     width: 300px;
-     height: 250px;
-     margin: 0 auto 10px;
-     display: block;
-   }
- }
- .iframe-336x280{
-   overflow: visible;
-
-   iframe{
-     position: relative;
-     z-index: 9;
-     top: 0;
-     left: 0;
-     width: 336px;
-     height: 280px;
-     margin: 0 auto 10px;
-     display: block;
-   }
- }
- .iframe-160x600{
-   overflow: visible;
-
-   iframe{
-     position: relative;
-     z-index: 9;
-     top: 0;
-     left: 0;
-     width: 160px;
-     height: 600px;
-     margin: 0 auto 10px;
-     display: block;
-   }
- }
-
- .iframe-120x600{
-   overflow: visible;
-
-   iframe{
-     position: relative;
-     z-index: 9;
-     top: 0;
-     left: 0;
-     width: 120px;
-     height: 600px;
-     margin: 0 auto 10px;
-     display: block;
-   }
- }
-
- .iframe-300x600{
-   overflow: visible;
-
-   iframe{
-     position: relative;
-     z-index: 9;
-     top: 0;
-     left: 0;
-     width: 300px;
-     height: 600px;
-     margin: 0 auto 10px;
-     display: block;
-   }
- }
-
- .clearfix{
-
-   &.divider{
-     display: table;
-     width: 100%;
-     height: 6px;
-     background: $color_green_light;
-     margin: 20px auto;
-     &.double{
-       height: 12px;
-     }
-   }
- }
-
- .menu{
-   list-style: none;
-
-   li{
-     float: right;
-     display: inline-block;
-     list-style: none;
-     margin: 40px 0 0 0;
-
-     a{
-       text-decoration: none;
-       color: $color_gray_dark;
-       text-transform: uppercase;
-
-     }
-   }
- }
- .icon-responsive{
-   margin: auto;
-   text-align: center;
-   span{
-     color: $color_green_light;
-     &:hover,
-     &.active{
-       color: $color_gray_dark;
-       cursor: pointer;
-     }
-   }
- }
- .tablet-bg{
-   background: url('../images/ipad-template.png') no-repeat scroll center center / 100% 100%;
-   width: 937px;
-   height: 1107px;
-   display: block;
-   margin: auto;
-
-   iframe{
-     z-index: -1;
-     position: relative;
-     margin: 105px 0 0 75px;
-   }
- }
-
- .mobile-bg{
-   background: url('../images/iphone-template.png') no-repeat scroll center center / 100% 100%;
-   width: 360px;
-   height: 650px;
-   display: block;
-   margin: auto;
-
-   iframe{
-     z-index: -1;
-     position: relative;
-     margin: 100px 0 0 18px;
-   }
- }
+}
