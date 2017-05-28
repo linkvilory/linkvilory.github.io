@@ -3,7 +3,7 @@ $(document).ready(function(){
   /*
    * Scrool down animation
    */
-  $("a[href='#main']").on("click", function(event){
+  $("a.anchor").on("click", function(event){
 
     var target = this.hash;
     event.preventDefault();
@@ -16,7 +16,5 @@ $(document).ready(function(){
   });
 
   $(".phrase").fitText(1.2, { minFontSize: '20px', maxFontSize: '60px' });
-
-
 
 });

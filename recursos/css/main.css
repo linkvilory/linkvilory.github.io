@@ -3,43 +3,7 @@
  */
 body,
 html {
-  background: #fcfffd;
-  font-weight: 200;
-  letter-spacing: 1px; }
-
-a[href="#main"] {
-  margin: 0;
-  display: block;
-  background: #333;
-  color: #fcfffd;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none; }
-
-code, b {
-  background: #5d737e;
-  color: #daffef; }
-
-b {
-  padding: 2px 4px;
-  font-size: 90%;
-  border-radius: 4px; }
-
-u {
-  text-decoration: none;
-  position: relative;
-  color: #5d737e;
-  font-weight: bolder; }
-
-section#space-a, section#space-b {
-  margin: 60px 0;
-  background: transparent;
-  color: #333;
-  padding: 60px 0; }
-  section#space-a p, section#space-b p {
-    color: #333;
-    text-align: center;
-    margin: 0; }
+  background: #fcfffd; }
 
 .ad-container {
   margin: auto;
@@ -90,30 +54,123 @@ iframe.ad.content:empty {
   text-align: right; }
 
 header {
-  background: #64b6ac;
+  background-image: url("../images/parallax/angel-de-la-independencia.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-color: #d3d3d3;
+  background-blend-mode: multiply;
   color: #fcfffd;
-  padding: 40px 0; }
+  padding: 0;
+  height: calc(100vh - 60px); }
+  header .container {
+    height: 100%; }
+    header .container .row {
+      height: 100%; }
+      header .container .row .col-md-12 {
+        height: 100%; }
+        header .container .row .col-md-12 .section-header {
+          text-align: center;
+          position: absolute;
+          right: 0;
+          margin: 0;
+          line-height: 1;
+          bottom: 0; }
 
-section {
-  padding: 40px 0; }
-  section a.btn {
+.anchor {
+  margin: 0;
+  display: block;
+  background: #222;
+  color: #fcfffd;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1; }
+  .anchor:hover, .anchor:active, .anchor:focus {
     background: #333;
     color: #fcfffd;
-    border: 1px solid #333;
-    padding: 10px 0;
-    display: block;
-    margin: auto;
-    max-width: 160px;
-    transition: .25s all ease; }
-    section a.btn:hover, section a.btn:focus, section a.btn:active {
-      color: #333;
-      background: #fcfffd;
-      border: 1px solid #333; }
-  section p {
+    text-decoration: none; }
+  .anchor.sitemap {
+    background: #ff5c5c; }
+    .anchor.sitemap .fa-stack .fa-chevron-down {
+      color: #ff5c5c; }
+  .anchor.objetivos {
+    background: #5271ff; }
+    .anchor.objetivos .fa-stack .fa-chevron-down {
+      color: #5271ff; }
+  .anchor.parallax {
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    z-index: 3;
+    width: 100%; }
+  .anchor .fa-stack {
+    overflow: hidden; }
+    .anchor .fa-stack .fa-chevron-down {
+      color: #333; }
+
+section {
+  margin: 0;
+  padding: 10vh 0;
+  position: relative;
+  min-height: calc(100vh); }
+  section.casas {
+    padding: 20vh 0;
+    min-height: auto;
+    background: url("../images/parallax/casas-de-colores.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    background-color: #333;
+    background-blend-mode: color-dodge; }
+  section.tec {
+    padding: 20vh 0;
+    min-height: auto;
+    background: url("../images/parallax/tec-de-monterrey.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    background-color: #fcfffd;
+    background-blend-mode: hard-light; }
+  section .section-subheader {
+    position: relative;
+    height: 40px;
     color: #333;
-    line-height: 1.5; }
-  section h2 {
-    color: #64b6ac; }
+    margin: 0 0 40px 0; }
+    section .section-subheader span {
+      background: #fcfffd;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1; }
+    section .section-subheader:before {
+      display: table;
+      content: "";
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: -10px;
+      color: #ff5c5c;
+      background: #ff5c5c; }
+    section .section-subheader.objetivos:before {
+      color: #5271ff;
+      background: #5271ff; }
+  section p {
+    line-height: 1.5;
+    text-align: left;
+    font-size: 1.5em;
+    color: #333; }
+  section a.btn {
+    background: #333;
+    color: #fff;
+    -webkit-transition: .25s all ease;
+    transition: .25s all ease;
+    display: table;
+    margin: auto; }
+    section a.btn:hover, section a.btn:active, section a.btn:focus {
+      background: #ff5c5c;
+      color: #fff; }
 
 table {
   text-align: left; }
@@ -127,8 +184,9 @@ footer {
   padding: 40px 0; }
   footer ul {
     padding: 0;
-    margin: 0;
-    list-style: none; }
+    list-style: none;
+    display: table;
+    margin: auto; }
     footer ul li {
       margin: 0 15px 0 0;
       display: inline-block; }

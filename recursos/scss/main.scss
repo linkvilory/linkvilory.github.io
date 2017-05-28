@@ -1,10 +1,11 @@
 $footer_color: #5d737e;
-$header_color: #64b6ac;
+$header_color: #ff5c5c;
+$header_line: #44d9e6;
 $h_color: #c0fdfb;
 $hover_color: #daffef;
 $text_white: #fcfffd;
 $text_black: #333;
-
+$blue: #5271ff;
 $space_a: #b7d3f2;
 
 /*
@@ -13,49 +14,7 @@ $space_a: #b7d3f2;
 body,
 html{
   background: $text_white;
-  font-weight: 200;
-  letter-spacing: 1px;
 }
-a[href="#main"]{
-  margin: 0;
-  display: block;
-  background: #333;
-  color: #fcfffd;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-}
-code, b{
-  background: $footer_color;
-  color: $hover_color;
-}
-b{
-  padding: 2px 4px;
-  font-size: 90%;
-  border-radius: 4px;
-}
-u{
-  text-decoration: none;
-  position: relative;
-  color: $footer_color;
-  font-weight: bolder;
-}
-section{
-  &#space-a,
-  &#space-b{
-    margin: 60px 0;
-    background: transparent;
-    color: $text_black;
-    padding: 60px 0;
-    p{
-      color: $text_black;
-      text-align: center;
-      margin: 0;
-    }
-  }
-}
-
-
 
 @mixin size-banner($w, $h){
 
@@ -126,35 +85,156 @@ iframe.ad.content:empty{
 }
 
 header{
-  background: $header_color;
+  background-image: url('../images/parallax/angel-de-la-independencia.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-color: #d3d3d3;
+  background-blend-mode: multiply;
   color: $text_white;
-  padding: 40px 0;
+  padding: 0;
+  height: calc(100vh - 60px);
+  .container{
+    height: 100%;
+    .row{
+      height: 100%;
+      .col-md-12{
+        height: 100%;
+        .section-header{
+          text-align: center;
+          position: absolute;
+          right: 0;
+          margin: 0;
+          line-height: 1;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
 }
-section{
-  padding: 40px 0;
-  a.btn{
+
+.anchor{
+  margin: 0;
+  display: block;
+  background: #222;
+  color: $text_white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  &:hover,
+  &:active,
+  &:focus{
     background: $text_black;
     color: $text_white;
-    border: 1px solid $text_black;
-    padding: 10px 0;
-    display: block;
-    margin: auto;
-    max-width: 160px;
-    transition: .25s all ease;
-    &:hover,
-    &:focus,
-    &:active{
+    text-decoration: none;
+  }
+  &.sitemap{
+    background: $header_color;
+    .fa-stack{
+      .fa-chevron-down{
+        color: $header_color;
+      }
+    }
+  }
+  &.objetivos{
+    background: $blue;
+    .fa-stack{
+      .fa-chevron-down{
+        color: $blue;
+      }
+    }
+  }
+  &.parallax{
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    z-index: 3;
+    width: 100%;
+  }
+  .fa-stack{
+    overflow: hidden;
+    .fa-chevron-down{
       color: $text_black;
+    }
+  }
+}
+
+section{
+  margin: 0;
+  padding: 10vh 0;
+  position: relative;
+  min-height: calc(100vh);
+  &.casas{
+    padding: 20vh 0;
+    min-height: auto;
+    background: url('../images/parallax/casas-de-colores.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    background-color: $text_black;
+    background-blend-mode: color-dodge;
+  }
+  &.tec{
+    padding: 20vh 0;
+    min-height: auto;
+    background: url('../images/parallax/tec-de-monterrey.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    background-color: $text_white;
+    background-blend-mode: hard-light;
+  }
+  .section-subheader{
+    position: relative;
+    height: 40px;
+    color: $text_black;
+    margin: 0 0 40px 0;
+    span{
       background: $text_white;
-      border: 1px solid $text_black;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    &:before{
+      display: table;
+      content: "";
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: -10px;
+      color: $header_color;
+      background: $header_color
+    }
+    &.objetivos{
+      &:before{
+        color: $blue;
+        background: $blue;
+      }
     }
   }
   p{
-    color: $text_black;
     line-height: 1.5;
+    text-align: left;
+    font-size: 1.5em;
+    color: $text_black;
   }
-  h2{
-    color: $header_color;
+  a.btn{
+    background: #333;
+    color: #fff;
+    -webkit-transition: .25s all ease;
+    transition: .25s all ease;
+    display: table;
+    margin: auto;
+    &:hover,
+    &:active,
+    &:focus{
+      background: $header_color;
+      color: #fff;
+    }
   }
 }
 table{
@@ -169,8 +249,9 @@ footer{
   padding: 40px 0;
   ul{
     padding: 0;
-    margin: 0;
     list-style: none;
+    display: table;
+    margin: auto;
     li{
       margin: 0 15px 0 0;
       display: inline-block;
